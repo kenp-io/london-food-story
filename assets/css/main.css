@@ -2421,7 +2421,7 @@ input, select, textarea {
 		}
 
 		.image.left, .image.right {
-			max-width: 40%;
+			max-width: 50%;
 		}
 
 			.image.left img, .image.right img {
@@ -3930,3 +3930,10 @@ header.major2 h2:after {
 			}
 
 		}
+
+.parentz {
+  text-align: center;
+}
+.parentz > ul {
+  display: inline-block;
+}

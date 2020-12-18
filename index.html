@@ -29,8 +29,9 @@
 						<ul>
 							<li><a href="#intro" class="active">Introduction</a></li>
 							<li><a href="#alcohol">Alcohol</a></li>
-							<li><a href="#second">Second Section</a></li>
+							<li><a href="#healthy">Healthy Diet</a></li>
 							<li><a href="#cta">Get Started</a></li>
+							<li><a href="#references">References</a></li>
 						</ul>
 					</nav>
 
@@ -90,14 +91,69 @@
 							</section>
 
 						<!-- First Section -->
-							<section id="Alcohol" class="main special">
-								<p>We notice that some of the data was completely unused. One of them was <b>alcohol consumption</b>.
-								</p>
-								<header class="major2">
-									<h2>Does the poor drink more than the rich?!</h2>
-								</header>
-								<p>Well let's dive in some data to figure this out. </b>.
+							<section id="alcohol" class="main">
+								<section class="main special">
+									<p>We notice that some of the data was completely unused. One of them was <b>alcohol consumption</b>.
+									</p>
+									<header class="major2">
+										<h2>Does the poor drink more than the rich?!</h2>
+									</header>
+									<p>Well let's dive in some data to figure this out.</p>
+								</section>
+								<section>
+									<p>The idea is to study if the alcohol consumption rate is related to some social caracteristics of an area. To do so, we decided to use several indicators given by the Office for National Statistics of the UK:</p>
+									<span class="image right"><object name="test" type="text/html" data="plots/energy_alcohol.html" style="width:520px;height:520px;"></object></span>
+									<ul>
+										<li>Unemployment Rate: % of unemployed people in a given area</li>
+										<li>Mean Annual Household Income estimate: Given in £ for each area</li>
+										<li>Median Annual Household Income estimate:  Given in £ for each area </li>
+										<li>No Qualification:  % of people without official qualification in a given area</li>
+										<li>High Qualification:  % of people with level of qualification of 4 or above in a given area</li>
+									</ul>
+									<p>In order to show and quantify possible relation, we computed Spearman correlations between the quantity (in g) of alcohol in a typical product of an area and indicators decribed above. Results are ploted on Figure 1.</p>
+								</section>
+								<section>
+									<p>The results were a bit surprising at first for our group. We all thought that people with lesser income and education would be more inclined to have a higher alcohol consumption. We have difficulty figuring out were this preconceived opinion comes from. Judging from our data this is certainly a bias that needs to change in our minds. The results are clear. High negative correlation for the unemployed and unqualified and high positive correlation for the employed, qualified and wealthy. So have we answered that question? <b>Not so fast.</b></p>
+									<p>Our dataset could be biased. What if a higher percentage of people shop at Tescos in affluent neighborhoods? This would imply higher alcohol purchases in those aread and that Tesco is not as popular in other neighborhoods. Luckily for us this can also be checked as the data includes a reprensativeness score. This score transaltes to how much the data is representative in a certain area. It equals the number of customers divided by the total number residents. We run a Spearman correlation between the representativeness of an aera and its Median Annual Household Income.
+									<p>We get a result of <b>R = ?????</b></p>
+									<p>This is quite a low correlation compared to the values we got on Figure 1. This tells us that it is generally not true and disproves this hypothesis. So how can we explain those results?</p>
+									<p>On way of interpreting such results could be to consider that alcohol products are generally expensive so well-off people can more easily afford them.<br />
+									Another way to explain those results would be that Tesco is generally a more expensive grocery store and some other chains out there and that people with a smaller income tend to be more cautious with their money and might go to another cheaper store to buy alcoholic beverages.<br />
+									</p>
+									<h3 style="text-align:center">Is there anything else we can extract from our dataset?</h3>
+								</section>
 							</section>
+
+							<section id="healthy" class="main">
+								<section class="main special">
+									<p>We also notice that we have the average diet of each area. An obvious and interesting question we can ask is
+									</p>
+									<header class="major2">
+										<h2>Where people are more likely to have a healthy diet?!</h2>
+									</header>
+									<p>To answer this question we need to define first what a healthy diet is.</p>
+								</section>
+								<section>
+									<p>There is many many definitions out there origination out of different sources from health gurus to fitness magazines. We arbitrarl ychose the following recommandations from the WHO but note that the analysis could be applied to any values by changing them in our Jupyter Notebook.</p>
+									<p>For a person of normal weight consuming about 2000 Kcal per day:</p>
+									<div class="parentz">
+										<ul>
+											<li>&ensp;11.5% protein **<a href="#protein"><sup>(1)</sup></a></li>
+											<li>&#60; 5% sugars <a href="#whoDiet"><sup>(2)</sup></a></li>
+											<li>&#60; 30% fat <a href="#whoDiet"><sup>(2)</sup></a></li>
+											<li>&#60; 10% saturate <a href="#whoDiet"><sup>(2)</sup></a></li>
+											<li>~ 50% carbs</li>
+											<li>&#62; 3% fiber <a href="#america"><sup>(3)</sup></a></li>
+										</ul>
+									</div>
+									<p>To obtain the calories intake at the nutrient level, we used the conversion factors set by EU directive 90/496/EEC41: 4 kcal for proteins and carbohydrates, and 2kcal for fibers.yWe then considered a 69Kg <a href="#wikiWeight"><sup>(4)</sup></a> average body weight for a resident in the UK. We then obtained 0.83g/Kg &middot; 69Kg &middot; 4Kcal/g = 229 Kcal which gives us a 11.5% protein intake over a mean intake of 2000Kcal/day.</p>
+									<p>Now that we have our model diet we want to check if the study we are about to do makes sense by looking at the correlation between the mean nutritive intake and the social factors we used for alcohol. Is there a link ? We plotted the correlation for every relation, which turned out to give a lot plots and we could visually observe correlation. Here is a good example where we can obverse a trendline with a negative slope.</p>
+									<object name="test" type="text/html" data="plots/scatter.html" style="width:100%;height:300px"></object>
+									<p>This a good primer for our study to validate that there might be some interesting things to discover and it might be worth investigating further.</p>
+
+								</section>
+							</section>
+
 
 							<section id="firstttt" class="main special">
 								<p>We notice that some of the data was completely unused. One of them was <b>alcohol consumption</b>.
@@ -159,7 +215,7 @@
 									</li>
 								</ul>
 								<p class="content">Nam elementum nisl et mi a commodo porttitor. Morbi sit amet nisl eu arcu faucibus hendrerit vel a risus. Nam a orci mi, elementum ac arcu sit amet, fermentum pellentesque et purus. Integer maximus varius lorem, sed convallis diam accumsan sed. Etiam porttitor placerat sapien, sed eleifend a enim pulvinar faucibus semper quis ut arcu. Ut non nisl a mollis est efficitur vestibulum. Integer eget purus nec nulla mattis et accumsan ut magna libero. Morbi auctor iaculis porttitor. Sed ut magna ac risus et hendrerit scelerisque. Praesent eleifend lacus in lectus aliquam porta. Cras eu ornare dui curabitur lacinia.</p>
-								<object name="test" type="text/html" data="test2.html" style="width:100%; height:500px;"></object>
+								<object name="test" type="text/html" data="plots/test2.html" style="width:100%; height:500px;"></object>
 								<footer class="major">
 									<ul class="actions special">
 										<li><a href="generic.html" class="button">Learn More</a></li>
@@ -180,6 +236,22 @@
 										<li><a href="generic.html" class="button">Learn More</a></li>
 									</ul>
 								</footer>
+							</section>
+
+							<section id="references" class="main">
+								<section class="main special">
+									<header class="major2">
+										<h2>References</h2>
+									</header>
+								</section>
+								<section>
+									<ol>
+										<li id="protein">WHO PROTEIN AND AMINO ACID REQUIREMENTS IN HUMAN NUTRITION WHO Technical Report https://apps.who.int/iris/bitstream/handle/10665/43411/WHO_TRS_935_eng.pdf?sequence=1</li>
+										<li id="whoDiet">WHO, “Healthy diet” https://www.who.int/news-room/fact-sheets/detail/healthy-diet</li>
+										<li id="america">Dietary Guidelines for American 2015-2020 ,8th edition</li>
+										<li id="wikiWeight">https://en.wikipedia.org/wiki/Human_body_weight#cite_note-wales-20</li>
+									</ol>
+								</section>
 							</section>
 
 					</div>
