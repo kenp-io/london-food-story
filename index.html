@@ -147,14 +147,40 @@
 										</ul>
 									</div>
 									<p>To obtain the calories intake at the nutrient level, we used the conversion factors set by EU directive 90/496/EEC41: 4 kcal for proteins and carbohydrates, and 2kcal for fibers.yWe then considered a 69Kg <a href="#wikiWeight"><sup>(4)</sup></a> average body weight for a resident in the UK. We then obtained 0.83g/Kg &middot; 69Kg &middot; 4Kcal/g = 229 Kcal which gives us a 11.5% protein intake over a mean intake of 2000Kcal/day.</p>
-									<p>Now that we have our model diet we want to check if the study we are about to do makes sense by looking at the correlation between the mean nutritive intake and the social factors we used for alcohol. Is there a link ? We plotted the correlation for every relation, which turned out to give a lot plots and we could visually observe correlation. Here is a good example where we can obverse a trendline with a negative slope.</p>
+									<p>Now that we have our model diet let's visualize with histograms how the London population is doing.</p>
+									<div class="table-wrapper">
+										<table class="alt">
+											<thead>
+												<tr>
+													<th align="center"><object name="test" type="text/html" data="plots/perc_protein.html" style="width:100%;height:350px"></object></th>
+													<th align="center"><object name="test" type="text/html" data="plots/perc_sugar.html" style="width:100%;height:350px"></object></th>
+												</tr>
+											</thead>
+											<thead>
+												<tr>
+													<th align="center"><object name="test" type="text/html" data="plots/perc_fat.html" style="width:100%;height:350px"></object></th>
+													<th align="center"><object name="test" type="text/html" data="plots/perc_saturate.html" style="width:100%;height:350px"></object></th>
+												</tr>
+											</thead>
+											<thead>
+												<tr>
+													<th align="center"><object name="test" type="text/html" data="plots/perc_carb.html" style="width:100%;height:350px"></object></th>
+													<th align="center"><object name="test" type="text/html" data="plots/perc_fibre.html" style="width:100%;height:350px"></object></th>
+												</tr>
+											</thead>
+										</table>
+									</div>
+									<h3 style="text-align:center">Well not that brilliant, innit?</h3>
+									<p>Before going further want to check if the study we are about to do makes sense by looking at the correlation between the mean nutritive intake and the social factors we used for alcohol. Is there a link ? We plotted the correlation for every relation, which turned out to give a lot plots and we could visually observe correlation. Here is a good example where we can obverse a trendline with a negative slope.</p>
 									<object name="test" type="text/html" data="plots/scatter.html" style="width:100%;height:300px"></object>
 									<p>This a good primer for our study to validate that there might be some interesting things to discover and it might be worth investigating further.</p>
 									<p>We will be using a scoring system to get determine if a certain area is close to the recommandations we chose. This score will consist in a number between 0 and 1, 1 being a perfect score. Please note that this score is entirely relative to the dataset, meaning a low score indicates that an area has a bad mean diet <b>compared to the other areas</b>.
 									</p>
 									<h3 style="text-align:center">How do we compute this score?</h3>
-									<p>We split up the scoring into a score for each of the 6 nutrients listed in our model recommandation. To compute a score for a nutrient, we first remove the outliers with a 97.5% interval and determine if those outliers are in the zone of the recommandation (they will get a score of 1) or completely out of the zone (they will get a score of 0). Now with our cleaned data we score it on the basis of the further datapoint from the datapoint getting a score of 0 and the rest having a linearly increasing score. 
+									<p>We split up the scoring into a score for each of the 6 nutrients listed in our model recommandation. To compute a score for a nutrient, we first remove the outliers with a 97.5% interval and determined if those outliers are in the zone of the recommandation (they will get a score of 1) or completely out of the zone (they will get a score of 0). Now with our cleaned data we score it on the basis of the further datapoint from the recommandation getting a score of 0 and the rest having a linearly increasing score.
 									</p>
+									<p>Once we have a score for every nutrient we simply average the scores for each area to get our final score. Let's visualize our results!</p>
+
 								</section>
 							</section>
 
