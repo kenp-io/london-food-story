@@ -177,10 +177,31 @@
 									<p>We will be using a scoring system to get determine if a certain area is close to the recommandations we chose. This score will consist in a number between 0 and 1, 1 being a perfect score. Please note that this score is entirely relative to the dataset, meaning a low score indicates that an area has a bad mean diet <b>compared to the other areas</b>.
 									</p>
 									<h3 style="text-align:center">How do we compute this score?</h3>
-									<p>We split up the scoring into a score for each of the 6 nutrients listed in our model recommandation. To compute a score for a nutrient, we first remove the outliers with a 97.5% interval and determined if those outliers are in the zone of the recommandation (they will get a score of 1) or completely out of the zone (they will get a score of 0). Now with our cleaned data we score it on the basis of the further datapoint from the recommandation getting a score of 0 and the rest having a linearly increasing score.
+									<p>We split up the scoring into a score for each of the 6 nutrients listed in our model recommandation. To compute a score for a nutrient, we first remove the outliers with a 97.5% interval and determined if those outliers are in the zone of the recommandation (they will get a score of 1) or completely out of the zone (they will get a score of 0). Now with our cleaned data we score it on the basis of the further datapoint from the recommandation getting a score of 0 and the rest having a linearly increasing score. Let's visualize our results, here an example with the 'fat' scores.
 									</p>
+									<object name="test" type="text/html" data="plots/fatMap.html" style="width:100%; height:500px;"></object>
 									<p>Once we have a score for every nutrient we simply average the scores for each area to get our final score. Let's visualize our results!</p>
-
+									<object name="test" type="text/html" data="plots/totalMap.html" style="width:100%; height:500px;"></object>
+									<p>It appears that the most 'healthy' diets are to be found in the bounday area of our map. This is good to have a visual idea of the data but now we can use our scores with the same socioeconomic factors as we did for the alcohol part! We computed correlation between those factors and our total average score and found that, sadly, there was no significant correlation. This means that we can't for example say 'educated areas eat a more healthy diet'</p>
+									<h3 style="text-align:center">Let's dig deeper.</h3>
+									<p>Instead of having just a 'healthy or not' approach. We can analyze those socioeconomic factors with the score we computed for smaller combinations of scores and compute for each socioeconomic factor the 5 combinations of scores that yield the higher correlation. Let's plot those correlations and see what we find!</p>
+									<div class="table-wrapper">
+										<table class="alt">
+											<thead>
+												<tr>
+													<th align="center"><object name="test" type="text/html" data="plots/comboUn.html" style="width:100%;height:450px"></object></th>
+													<th align="center"><object name="test" type="text/html" data="plots/comboMean.html" style="width:100%;height:450px"></object></th>
+												</tr>
+											</thead>
+											<thead>
+												<tr>
+													<th align="center"><object name="test" type="text/html" data="plots/comboNo.html" style="width:100%;height:450px"></object></th>
+													<th align="center"><object name="test" type="text/html" data="plots/comboHigh.html" style="width:100%;height:450px"></object></th>
+												</tr>
+											</thead>
+										</table>
+									</div>
+									<p>Interesting, the first nutrient that pops out is fiber. Here is clear evidence in the 4 plots we have that fiber is highly correlated with wealth and education! KAMS CONTINUE HERE BLABLA</p>
 								</section>
 							</section>
 
@@ -245,7 +266,6 @@
 									</li>
 								</ul>
 								<p class="content">Nam elementum nisl et mi a commodo porttitor. Morbi sit amet nisl eu arcu faucibus hendrerit vel a risus. Nam a orci mi, elementum ac arcu sit amet, fermentum pellentesque et purus. Integer maximus varius lorem, sed convallis diam accumsan sed. Etiam porttitor placerat sapien, sed eleifend a enim pulvinar faucibus semper quis ut arcu. Ut non nisl a mollis est efficitur vestibulum. Integer eget purus nec nulla mattis et accumsan ut magna libero. Morbi auctor iaculis porttitor. Sed ut magna ac risus et hendrerit scelerisque. Praesent eleifend lacus in lectus aliquam porta. Cras eu ornare dui curabitur lacinia.</p>
-								<object name="test" type="text/html" data="plots/test2.html" style="width:100%; height:500px;"></object>
 								<footer class="major">
 									<ul class="actions special">
 										<li><a href="generic.html" class="button">Learn More</a></li>
