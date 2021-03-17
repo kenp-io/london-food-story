@@ -1,6 +1,6 @@
 # Website
 
-Got to [kenp-io.github.io/london-food-story](kenp-io.github.io/london-food-story)
+Got to [kenp-io.github.io/london-food-story](http://kenp-io.github.io/london-food-story)
 
 # Replication code
 
